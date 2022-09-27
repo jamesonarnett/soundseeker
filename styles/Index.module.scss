@@ -1,4 +1,4 @@
-$color-primary: #0070f3;
+@import "./named_vars.scss";
 
 .index {
   display: flex;
@@ -7,5 +7,5 @@ $color-primary: #0070f3;
   align-items: center;
   min-height: 100vh;
 
-  background-color: #445b75;
+  background-color: $color-primary;
 }
