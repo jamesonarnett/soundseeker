@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/LoginBtn.module.scss";
+import Image from "next/image";
 import { CLIENT_ID, BASE_URL, generateRandomString } from "../utils";
 
 const LoginBtn = () => {
@@ -13,7 +14,13 @@ const LoginBtn = () => {
   return (
     <div className={styles.btnWrapper}>
       <button type="button" className={styles.loginBtn} onClick={login}>
-        Login
+        <Image
+          src="/assets/spotify-white.png"
+          alt="me"
+          width="32"
+          height="32"
+        />
+        <span>Connect with Spotify to begin</span>
       </button>
     </div>
   );
