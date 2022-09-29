@@ -13,6 +13,19 @@
   align-items: center;
 }
 
+.loggedInDiv {
+  //
+}
+
+.loggedOutDiv {
+  width: 100%;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
 @media only screen and (min-width: 1199.99px) {
   .cardBody {
     width: 50vw;
@@ -47,30 +60,6 @@
     }
   }
 }
-
-// @media only screen and (max-width: 767.98px) {
-//   .cardBody {
-//     width: 80vw;
-//     height: 70vh;
-
-//     h1 {
-//       font-size: 2rem;
-//       margin-top: 20px;
-//     }
-//   }
-// }
-
-// @media only screen and (max-width: 575.98px) {
-//   .cardBody {
-//     width: 80vw;
-//     height: 70vh;
-
-//     h1 {
-//       font-size: 2rem;
-//       margin-top: 20px;
-//     }
-//   }
-// }
 
 @media only screen and (max-width: 432px) {
   .cardBody {
