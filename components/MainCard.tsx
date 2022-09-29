@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginBtn from "./LoginBtn";
 import styles from "../styles/MainCard.module.scss";
 
 const MainCard = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {}, []);
   return (
     <section className={styles.cardBody}>
       <h1>soundSeeker</h1>
@@ -16,7 +18,7 @@ const MainCard = () => {
           onChange={() => {}}
         />
       </div>
-      <LoginBtn />
+      {isLoggedIn ? "" : <LoginBtn />}
     </section>
   );
 };

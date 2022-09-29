@@ -13,3 +13,21 @@ export const generateRandomString = (myLength: number) => {
   const randomString = randomArray.join("");
   return randomString;
 };
+
+export const setToken = (url: string, s: any) => {
+  if (url.includes("access_token")) {
+    const token = extractToken(url);
+    s.setAccessToken(token);
+    localStorage.setItem("token", token);
+  }
+};
+
+// NON EXPORTED FUNCTIONS BELOW //
+
+const extractToken = (url: string) => {
+  const hash = url.substring(1);
+  const params = hash.split("&");
+  const token = params[0].split("=")[1];
+
+  return token;
+};
