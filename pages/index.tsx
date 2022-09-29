@@ -17,6 +17,8 @@ const Home: NextPage = () => {
     <div className={styles.index}>
       <Head>
         <title>soundSeeker</title>
+        <meta name="description" content="soundSeeker" />
+        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <MainCard />
     </div>

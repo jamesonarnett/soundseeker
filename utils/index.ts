@@ -22,6 +22,11 @@ export const setToken = (url: string, s: any) => {
   }
 };
 
+export const isLoggedIn = () => {
+  const token = localStorage.getItem("token");
+  return token ? true : false;
+};
+
 // NON EXPORTED FUNCTIONS BELOW //
 
 const extractToken = (url: string) => {

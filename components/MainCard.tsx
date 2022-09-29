@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import LoginBtn from "./LoginBtn";
+import { isLoggedIn } from "../utils";
 import styles from "../styles/MainCard.module.scss";
 
 const MainCard = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {}, []);
   return (
     <section className={styles.cardBody}>
@@ -18,7 +18,7 @@ const MainCard = () => {
           onChange={() => {}}
         />
       </div>
-      {isLoggedIn ? "" : <LoginBtn />}
+      {isLoggedIn() ? "" : <LoginBtn />}
     </section>
   );
 };
