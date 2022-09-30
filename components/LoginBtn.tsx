@@ -22,6 +22,7 @@ const LoginBtn = () => {
         />
         <span>Connect with Spotify to begin</span>
       </button>
+      <h3>Any song - Any where</h3>
     </div>
   );
 };

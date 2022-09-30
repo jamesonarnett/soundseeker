@@ -15,7 +15,6 @@ const MainCard = () => {
         </div>
       ) : (
         <div className={styles.loggedOutDiv}>
-          <h3>A world of options await</h3>
           <LoginBtn />
         </div>
       )}
