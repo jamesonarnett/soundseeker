@@ -5,11 +5,14 @@ import { isLoggedIn } from "../utils";
 import styles from "../styles/MainCard.module.scss";
 
 const MainCard = () => {
-  useEffect(() => {}, []);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    localStorage.getItem("token") ? setIsLoggedIn(true) : setIsLoggedIn(false);
+  }, []);
   return (
     <section className={styles.cardBody}>
       <h1>soundSeeker</h1>
-      {isLoggedIn() ? (
+      {isLoggedIn ? (
         <div className={styles.loggedInDiv}>
           <SearchInput />
         </div>
