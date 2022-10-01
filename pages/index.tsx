@@ -9,10 +9,6 @@ const Home: NextPage = () => {
   const spotify = require("spotify-web-api-js");
   const s = new spotify();
 
-  s.getArtistAlbums("43ZHCT0cAZBISjO8DG9PnE").then((data: any) =>
-    console.log(data)
-  );
-
   useEffect(() => {
     const url = window.location.href;
     setToken(url, s);
