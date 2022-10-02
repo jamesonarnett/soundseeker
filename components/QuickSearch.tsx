@@ -10,14 +10,19 @@ const SearchInput = () => {
   const spotify = require("spotify-web-api-js");
   const s = new spotify();
 
-  const formRequest = () => {
-    // do something with the search term
-  };
-
   const onSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(searchTerm);
-    console.log(playlistSearch);
+
+    if (searchTerm) {
+      s.searchTracks(searchTerm).then((res: any) => {
+        console.log(res.tracks.items);
+      });
+    } else if (playlistSearch) {
+      s.searchPlaylists(playlistSearch).then((res: any) => {
+        console.log(res.playlists.items);
+      });
+    }
+
     searchTerm && setSearchTerm("");
     playlistSearch && setPlaylistSearch("");
   };
