@@ -12,17 +12,21 @@ const LoginBtn = () => {
   };
 
   return (
-    <div className={styles.btnWrapper}>
-      <button type="button" className={styles.loginBtn} onClick={login}>
-        <Image
-          src="/assets/spotify-white.png"
-          alt="me"
-          width="32"
-          height="32"
-        />
-        <span>Connect with Spotify to begin</span>
-      </button>
-      <h3>Any song - Any where</h3>
+    <div className={styles.triangle}>
+      <div className={styles.btnWrapper}>
+        <button type="button" className={styles.loginBtn} onClick={login}>
+          <Image
+            src="/assets/spotify-white.png"
+            alt="me"
+            width="32"
+            height="32"
+          />
+          <span>Connect with your Spotify account</span>
+        </button>
+        <h4>
+          Pick a genre, turn on the sound, and get ready to explore new music!
+        </h4>
+      </div>
     </div>
   );
 };

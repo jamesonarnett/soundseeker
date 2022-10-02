@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
-import { setToken } from "../utils";
+import { BASE_URL, setToken } from "../utils";
 import styles from "../styles/Index.module.scss";
 import MainCard from "../components/MainCard";
 import Head from "next/head";
@@ -10,8 +10,9 @@ const Home: NextPage = () => {
   const s = new spotify();
 
   useEffect(() => {
-    const url = window.location.href;
+    let url = window.location.href;
     setToken(url, s);
+    document.location.hash = "welcome";
   }, []);
   return (
     <div className={styles.cardBackground}>

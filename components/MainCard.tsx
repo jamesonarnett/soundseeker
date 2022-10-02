@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LoginBtn from "./LoginBtn";
+import { isLoggedIn } from "../utils";
 import QSearch from "./QuickSearch";
 import styles from "../styles/MainCard.module.scss";
 
@@ -11,12 +12,15 @@ const MainCard = () => {
   return (
     <div className={styles.cardBody}>
       <h1>soundSeeker</h1>
+      <div>
+        <QSearch />
+      </div>
       {isLoggedIn ? (
-        <div className={styles.loggedInDiv}>
-          <QSearch />
-        </div>
+        //placeholder for logged in user
+        <p></p>
       ) : (
         <div className={styles.loggedOutDiv}>
+          <p>Log in to get started</p>
           <LoginBtn />
         </div>
       )}

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
-import styles from "../styles/SearchInput.module.scss";
+import styles from "../styles/QuickSearch.module.scss";
+import { getToken } from "../utils";
 
 const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [playlistSearch, setPlaylistSearch] = useState("");
+
+  const spotify = require("spotify-web-api-js");
+  const s = new spotify();
 
   const formRequest = () => {
     // do something with the search term
@@ -18,10 +22,17 @@ const SearchInput = () => {
     playlistSearch && setPlaylistSearch("");
   };
 
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      s.setAccessToken(token);
+    }
+  }, [searchTerm, playlistSearch]);
+
   return (
     <div className={styles.searchDiv}>
       <form onSubmit={onSubmit} className={styles.searchDiv}>
-        <div>
+        <div className={styles.singleInputDiv}>
           <FiSearch className={styles.searchIcon} />
           <input
             type="text"
@@ -32,7 +43,7 @@ const SearchInput = () => {
           />
         </div>
         <p> - or - </p>
-        <div>
+        <div className={styles.singleInputDiv}>
           <FiSearch className={styles.searchIcon} />
           <input
             type="text"
