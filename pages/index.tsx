@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     setToken(url, s);
   }, []);
   return (
-    <div className={styles.index}>
+    <div className={styles.cardBackground}>
       <Head>
         <title>soundSeeker</title>
         <meta name="description" content="soundSeeker" />

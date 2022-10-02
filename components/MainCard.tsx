@@ -9,7 +9,7 @@ const MainCard = () => {
     localStorage.getItem("token") ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, []);
   return (
-    <section className={styles.cardBody}>
+    <div className={styles.cardBody}>
       <h1>soundSeeker</h1>
       {isLoggedIn ? (
         <div className={styles.loggedInDiv}>
@@ -20,7 +20,7 @@ const MainCard = () => {
           <LoginBtn />
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

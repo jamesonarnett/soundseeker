@@ -22,7 +22,7 @@ const SearchInput = () => {
     <div className={styles.searchDiv}>
       <form onSubmit={onSubmit} className={styles.searchDiv}>
         <div>
-          <FiSearch className={styles.searchIcon} width="20px" height="20px" />
+          <FiSearch className={styles.searchIcon} />
           <input
             type="text"
             className={styles.searchInput}
@@ -33,7 +33,7 @@ const SearchInput = () => {
         </div>
         <p> - or - </p>
         <div>
-          <FiSearch className={styles.searchIcon} width="20px" height="20px" />
+          <FiSearch className={styles.searchIcon} />
           <input
             type="text"
             className={styles.searchInput}
