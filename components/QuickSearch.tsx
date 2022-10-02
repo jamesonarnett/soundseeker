@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import styles from "../styles/QuickSearch.module.scss";
-import { getToken } from "../utils";
+import { getToken, isLoggedIn } from "../utils";
 
 const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,17 +42,21 @@ const SearchInput = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <p> - or - </p>
-        <div className={styles.singleInputDiv}>
-          <FiSearch className={styles.searchIcon} />
-          <input
-            type="text"
-            className={styles.searchInput}
-            placeholder={"Search your playlists"}
-            value={playlistSearch}
-            onChange={(e) => setPlaylistSearch(e.target.value)}
-          />
-        </div>
+        {isLoggedIn() && (
+          <div>
+            <p> - or - </p>
+            <div className={styles.singleInputDiv}>
+              <FiSearch className={styles.searchIcon} />
+              <input
+                type="text"
+                className={styles.searchInput}
+                placeholder={"Search your playlists"}
+                value={playlistSearch}
+                onChange={(e) => setPlaylistSearch(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
         <button type="submit" className={styles.searchBtn} onClick={onSubmit}>
           Search
         </button>
