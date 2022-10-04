@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
-import { BASE_URL, setToken } from "../utils";
+import { setToken } from "../utils";
 import styles from "../styles/Index.module.scss";
 import MainCard from "../components/MainCard";
 import Head from "next/head";
