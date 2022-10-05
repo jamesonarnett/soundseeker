@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LoginBtn from "./LoginBtn";
-import { isLoggedIn } from "../utils";
 import QSearch from "./QuickSearch";
 import styles from "../styles/MainCard.module.scss";
 

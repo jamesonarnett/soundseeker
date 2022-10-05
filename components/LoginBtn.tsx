@@ -17,7 +17,7 @@ const LoginBtn = () => {
         <button type="button" className={styles.loginBtn} onClick={login}>
           <Image
             src="/assets/spotify-white.png"
-            alt="me"
+            alt="Spotify Logo"
             width="32"
             height="32"
           />
