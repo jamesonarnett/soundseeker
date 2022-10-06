@@ -2,11 +2,31 @@ import React from "react";
 import styles from "../styles/SongCard.module.scss";
 import { Song } from "../types";
 
-const SongCard = ({ name, id }: Song) => {
+const SongCard = ({
+  id,
+  name,
+  explicit,
+  href,
+  duration,
+  uri,
+  artist,
+  album,
+  images,
+}: Song) => {
   return (
     <div id={id} className={styles.songCard}>
-      <h3>{name}</h3>
-      <p></p>
+      <div>
+        <h3>{name}</h3>
+        <p></p>
+      </div>
+
+      <div>
+        {artist && artist.length > 1 ? (
+          <p key={id}>Artists: {artist.join(", ")}</p>
+        ) : (
+          <p key={id}>No Artist information available</p>
+        )}
+      </div>
     </div>
   );
 };

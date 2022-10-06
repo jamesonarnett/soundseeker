@@ -71,7 +71,6 @@ const SearchInput = () => {
           Search
         </button>
       </form>
-
       <div className={styles.searchResultsDiv}>
         <h3>Search Results</h3>
         {searchResults ? (
