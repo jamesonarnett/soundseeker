@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import styles from "../styles/QuickSearch.module.scss";
+import { Song } from "../types";
 import { getToken, isLoggedIn } from "../utils";
+import SongCard from "./SongCard";
 
 const SearchInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [playlistSearch, setPlaylistSearch] = useState("");
+  const [searchResults, setSearchResults] = useState<Song[]>([]);
 
   const spotify = require("spotify-web-api-js");
   const s = new spotify();
@@ -15,11 +18,13 @@ const SearchInput = () => {
 
     if (searchTerm) {
       s.searchTracks(searchTerm).then((res: any) => {
-        console.log(res.tracks.items);
+        setSearchResults(res.tracks.items);
+        console.log(searchResults);
       });
     } else if (playlistSearch) {
       s.searchPlaylists(playlistSearch).then((res: any) => {
-        console.log(res.playlists.items);
+        setSearchResults(res.playlists.items);
+        console.log(searchResults);
       });
     }
 
@@ -66,6 +71,33 @@ const SearchInput = () => {
           Search
         </button>
       </form>
+
+      <div className={styles.searchResultsDiv}>
+        <h3>Search Results</h3>
+        {searchResults ? (
+          searchResults.map((song: Song) => {
+            return (
+              <SongCard
+                name={song.name}
+                id={song.id}
+                explicit={song.explicit}
+                href={song.href}
+                uri={song.uri}
+                duration={song.duration}
+                artist={song.artist}
+                album={{
+                  name: "",
+                  total_tracks: 0,
+                  release_date: "",
+                  images: undefined,
+                }}
+              />
+            );
+          })
+        ) : (
+          <p>No results found</p>
+        )}
+      </div>
     </div>
   );
 };

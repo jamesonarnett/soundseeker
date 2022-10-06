@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "..styles/SongCard.module.scss";
+import styles from "../styles/SongCard.module.scss";
+import { Song } from "../types";
 
-const SongCard = ({ title, desc, id }) => {
+const SongCard = ({ name, id }: Song) => {
   return (
-    <div className={styles.songCard}>
-      <h3></h3>
+    <div id={id} className={styles.songCard}>
+      <h3>{name}</h3>
       <p></p>
     </div>
   );
