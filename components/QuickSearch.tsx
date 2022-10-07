@@ -71,32 +71,34 @@ const SearchInput = () => {
           Search
         </button>
       </form>
-      <div className={styles.searchResultsDiv}>
-        <h3>Search Results</h3>
-        {searchResults ? (
-          searchResults.map((song: Song) => {
-            return (
-              <SongCard
-                name={song.name}
-                id={song.id}
-                explicit={song.explicit}
-                href={song.href}
-                uri={song.uri}
-                duration={song.duration}
-                artist={song.artist}
-                album={{
-                  name: "",
-                  total_tracks: 0,
-                  release_date: "",
-                  images: undefined,
-                }}
-              />
-            );
-          })
-        ) : (
-          <p>No results found</p>
-        )}
-      </div>
+      {isLoggedIn() && (
+        <div className={styles.searchResultsDiv}>
+          <h3>Search Results</h3>
+          {searchResults ? (
+            searchResults.map((song: Song) => {
+              return (
+                <SongCard
+                  name={song.name}
+                  id={song.id}
+                  explicit={song.explicit}
+                  href={song.href}
+                  uri={song.uri}
+                  duration={song.duration}
+                  artist={song.artist}
+                  album={{
+                    name: "",
+                    total_tracks: 0,
+                    release_date: "",
+                    images: undefined,
+                  }}
+                />
+              );
+            })
+          ) : (
+            <p>No results found</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
