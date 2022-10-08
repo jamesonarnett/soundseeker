@@ -1,4 +1,4 @@
-@import "./named_vars.scss";
+@import "./Z_named_vars.scss";
 
 .searchDiv {
   display: flex;
@@ -10,8 +10,7 @@
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  margin-top: 4rem;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: red;
 
   .singleInputDiv {
     display: flex;
@@ -28,8 +27,6 @@
   .searchIcon {
     width: 20px;
     height: 20px;
-    margin-right: 19rem;
-    position: absolute;
     color: black;
   }
 

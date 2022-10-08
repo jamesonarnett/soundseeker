@@ -15,12 +15,15 @@ const Home: NextPage = () => {
     document.location.hash = "welcome";
   }, []);
   return (
-    <div className={styles.cardBackground}>
+    <div className={styles.mainBackground}>
       <Head>
         <title>soundSeeker</title>
         <meta name="description" content="soundSeeker" />
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
+      <div className={styles.fauxNav}>
+        <h1>SoundSeeker</h1>
+      </div>
       <MainCard />
     </div>
   );

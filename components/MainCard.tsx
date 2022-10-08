@@ -10,19 +10,25 @@ const MainCard = () => {
   }, []);
   return (
     <div className={styles.cardBody}>
-      <h1>soundSeeker</h1>
-      <div>
-        <QSearch />
-      </div>
-      {isLoggedIn ? (
-        //placeholder for logged in user
-        <p></p>
-      ) : (
-        <div className={styles.loggedOutDiv}>
-          <p>Log in to get started</p>
-          <LoginBtn />
+      <div className={styles.innerCardBody}>
+        <div className={styles.leftDiv}>
+          <div>
+            <QSearch />
+          </div>
+          {isLoggedIn ? (
+            //placeholder for logged in user
+            <p></p>
+          ) : (
+            <div className={styles.loggedOutDiv}>
+              <p>Log in to get started</p>
+              <LoginBtn />
+            </div>
+          )}
         </div>
-      )}
+        <div className={styles.rightDiv}>
+          <p>WorkInP</p>
+        </div>
+      </div>
     </div>
   );
 };
