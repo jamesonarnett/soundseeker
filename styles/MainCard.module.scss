@@ -6,25 +6,14 @@
   box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, 1);
   color: $text;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  width: 100vw;
-
-  .innerCardBody {
-    display: flex;
-    .leftDiv {
-      text-align: center;
-    }
-
-    .rightDiv {
-      text-align: center;
-      color: red;
-    }
-  }
 }
 
 .loggedOutDiv {
   max-width: fit-content;
-  position: absolute;
   bottom: 12.5vh;
   text-align: center;
 

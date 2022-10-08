@@ -20,13 +20,13 @@ const SongCard = ({
         <p></p>
       </div>
 
-      <div>
-        {artist && artist.length > 1 ? (
+      {/* <div>
+        {artist ? (
           <p key={id}>Artists: {artist.join(", ")}</p>
         ) : (
           <p key={id}>No Artist information available</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

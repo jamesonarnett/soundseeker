@@ -32,7 +32,3 @@ export interface Song {
     }
   ];
 }
-
-export interface SongList {
-  [key: string]: Song;
-}

@@ -19,12 +19,10 @@ const SearchInput = () => {
       if (searchTerm) {
         s.searchTracks(searchTerm).then((res: any) => {
           setSearchResults(res.tracks.items);
-          console.log(searchResults);
         });
       } else if (playlistSearch) {
         s.searchPlaylists(playlistSearch).then((res: any) => {
           setSearchResults(res.playlists.items);
-          console.log(searchResults);
         });
       }
     } catch (err) {
@@ -44,6 +42,11 @@ const SearchInput = () => {
 
   return (
     <div className={styles.searchDiv}>
+      {/* 
+            palcehodler for popular search results -
+          - filler type content when not logged in
+      */}
+
       {isLoggedIn() && (
         <form onSubmit={onSubmit} className={styles.searchDiv}>
           <div className={styles.singleInputDiv}>

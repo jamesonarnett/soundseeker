@@ -5,29 +5,25 @@ import styles from "../styles/MainCard.module.scss";
 
 const MainCard = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     localStorage.getItem("token") ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, []);
   return (
     <div className={styles.cardBody}>
       <div className={styles.innerCardBody}>
-        <div className={styles.leftDiv}>
-          <div>
-            <QSearch />
+        <div>
+          <QSearch />
+        </div>
+        {isLoggedIn ? (
+          //placeholder for logged in user
+          <p></p>
+        ) : (
+          <div className={styles.loggedOutDiv}>
+            <p>Log in to get started</p>
+            <LoginBtn />
           </div>
-          {isLoggedIn ? (
-            //placeholder for logged in user
-            <p></p>
-          ) : (
-            <div className={styles.loggedOutDiv}>
-              <p>Log in to get started</p>
-              <LoginBtn />
-            </div>
-          )}
-        </div>
-        <div className={styles.rightDiv}>
-          <p>WorkInP</p>
-        </div>
+        )}
       </div>
     </div>
   );

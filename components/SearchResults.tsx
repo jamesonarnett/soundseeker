@@ -3,8 +3,9 @@ import styles from "../styles/SearchResults.module.scss";
 import { Song } from "../types";
 import SongCard from "./SongCard";
 
-const SearchResults = () => {
-  const searchResults: Song[] = [];
+const SearchResults = (props: Song[]) => {
+  //ehhhh
+  let searchResults = props;
 
   return (
     <div className={styles.searchResultsDiv}>

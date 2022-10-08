@@ -24,7 +24,7 @@ const LoginBtn = () => {
           <span>Connect with your Spotify account</span>
         </button>
         <h4>
-          Pick a genre, turn on the sound, and get ready to explore new music!
+          Pick a genre, turn up the volume, and get ready to explore new music!
         </h4>
       </div>
     </div>
