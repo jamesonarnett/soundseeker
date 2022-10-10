@@ -1,8 +1,20 @@
 # soundseeker
 
-An idea I have been considering, essentially a "Tinder" for
+After further consideration, I believe I will discontinue work on soundseeker until further notice, perhaps not to be revisited, as I did not make much progress anyhow, being busy with other interests. <br /> Many things have come up recently, and I would prefer to pursue those opportunites and interests instead of making small contributions here.
+
+While I enjoyed the idea, I came across an old Reddit post where someone had done an extraordinary job on completing almost exactly what I had my mind on (rather different style, but the implementation is spot on).
+
+You can check it out here <a href="https://www.tuneful.app/">Tuneful.app</a>
+<br />
+Full credit to christiaan@tuneful.app
+
+This discovery combined with new interest in another area, leads my brain to wander to "better" ideas.
+
+Thoughts of grandeur abundant -- the path lies elsewhere.
+
+<!-- An idea I have been considering, essentially a "Tinder" for
 Spotify/music streaming services.
-Log in, select a category or "random", and like and dislike to your hearts content, curating playlists of music you otherwise would have never found.
+Log in, select a category or "random", and like and dislike to your hearts content, curating playlists of music you otherwise would have never found. -->
 
 ## Getting Started
 
